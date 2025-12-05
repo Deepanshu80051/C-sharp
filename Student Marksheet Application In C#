@@ -1,0 +1,54 @@
+// Online C# Editor for free
+// Write, Edit and Run your C# code using C# Online Compiler
+
+using System;
+
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+   
+        Console.WriteLine("Enter your name");
+        string name=Console.ReadLine();
+        Console.WriteLine("Enter roll number");
+        string roll=Console.ReadLine();
+        Console.WriteLine("Enter math marks");
+        int m=int.Parse(Console.ReadLine());
+         Console.WriteLine("Enter English marks");
+        int e=int.Parse(Console.ReadLine());
+         Console.WriteLine("Enter Hindi marks");
+        int h=int.Parse(Console.ReadLine());
+         Console.WriteLine("Enter Computer marks");
+        int c=int.Parse(Console.ReadLine());
+         Console.WriteLine("Enter science marks");
+        int s=int.Parse(Console.ReadLine());
+        
+        int obt = m + e+h+c+s;
+        int per=obt *100/500;
+        
+         Console.WriteLine("-------------- MARKSHEET-------------");
+          Console.WriteLine("your name is : {0}",name);
+           Console.WriteLine("your roll number is : {0}",roll);
+        Console.WriteLine("your obtained marks : {0}",obt);
+          Console.WriteLine("your percent : {0}",per);
+         
+         if(per >=80){
+             Console.WriteLine("Grade A1");
+         }
+         else if(per >=60){
+             Console.WriteLine("Grade B")
+         }
+         else if(per >=50){
+             Console.WriteLine("Grade C")
+         }
+         else if(per >=40){
+             Console.WriteLine("Grade D")
+         }
+         else {
+              Console.WriteLine("F")
+         }
+     
+}
+    
+    
+}
