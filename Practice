@@ -1,0 +1,305 @@
+C#
+->2002 – C# 13 version
+->It is an object-oriented programming language created by Microsoft that runs on the .NET Framework
+C# is used for:
+Mobile applications
+Desktop applications
+Web applications
+Web services
+Web sites
+Games
+VR
+Database applications
+Why Use C#?
+It is one of the most popular programming languages in the world
+It is easy to learn and simple to use
+It has huge community support
+C# is an object-oriented language which gives a clear structure to programs and allows code to be reused, lowering development costs
+As C# is close to C, C++ and Java, it makes it easy for programmers to switch to C# or vice versa
+
+
+
+Data Type
+
+1-Integer data Type
+Length find:- MinValue and MaxValue
+Console.WriteLine(sbyte.MinValue + " to " + sbyte.MaxValue);
+Console.WriteLine(byte.MinValue + " to " + byte.MaxValue);
+Console.WriteLine(short.MinValue + " to " + short.MaxValue);
+Console.WriteLine(ushort.MinValue + " to " + ushort.MaxValue);
+Console.WriteLine(int.MinValue + " to " + int.MaxValue);
+Console.WriteLine(uint.MinValue + " to " + uint.MaxValue);
+Console.WriteLine(long.MinValue + " to " + long.MaxValue);
+Console.WriteLine(ulong.MinValue + " to " + ulong.MaxValue);
+Console.WriteLine(char.MinValue + " to " + char.MaxValue);
+
+2-Boolean
+using System;
+using System.Linq;
+
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+     int a=10;
+     int b=5;
+     int c=a>b; // add bool c=a>b then no error
+     Console.WriteLine(a);
+
+    }
+}
+//error- Cannot implicitly convert type 'bool' to 'int'
+
+3-Float , Decimal and Double 
+
+M==m and F==f , double me d likhna jaruri nhi h;
+    float a=43.5342454F;    //7 range
+    double b=3.56789064234567;    //15-16
+    decimal d=345.323424M;       //28-29
+    Console.WriteLine(d);
+
+4-String and Character
+ string b="bababa";
+     char a='A';
+     char c="A";  //error
+     Console.WriteLine(b);
+      Console.WriteLine(a);
+     Console.WriteLine(c);
+Console.ReadLine();
+
+Escape Sequence-> 
+string b="\"bababa ninja\"”; //   o/p-  "bababa ninja"
+      Console.WriteLine(b);
+string a="\\bababa ninja\\”;
+      Console.WriteLine(a);  // o/p- \bababa ninja\
+   
+Verbatim Literal
+—->  string s="D:\\deepanshu\\tiwari";
+       Console.WriteLine(s);   / /D:\deepanshu\tiwari
+
+—--> string s="D:\deepanshu\tiwari";
+       Console.WriteLine(s);  // Error - Unrecognized escape sequence
+
+To hum log @ ka use kare ge
+
+—--> string s=@"D:\deepanshu\tiwari";
+       Console.WriteLine(s);   // D:\deepanshu\tiwari
+
+
+—-->  string s=@"D:\\deepanshu\\tiwari";
+       Console.WriteLine(s);  // D:\\deepanshu\\tiwari
+
+
+Data Type Conversion
+
+Two Types :- 
+1- Implicit
+2-Explicit
+
+Implicit - automatic Conversion by compiler
+ int a=10;
+ float b=a;
+ Console.WriteLine(b);
+
+Explicit 
+Float a=10.2352f;
+Int b=a;
+Console.WriteLine(b); // error
+
+Method 1 :-(int)
+          Float a=10.2352f;
+          Int b=(int)a;
+          Console.WriteLine(b); // 10
+
+Method 2:-
+         float b=10.2345f;
+         int a=Convert.ToInt32(b);
+        Console.WriteLine(a);    //10
+Eg:-
+  string a="10";
+   string b="10";
+   int c=a+b;
+   Console.WriteLine(c) //error
+
+
+ string a="10";
+ string b="10";
+ int c=Convert.ToInt32(a)+Convert.ToInt32(b);
+ Console.WriteLine(c);   //20
+
+
+Method 3:- int.Parse(only int string leta h agar float denge to error)
+
+ string a="10";
+   string b="10";
+   int c=int.Parse(a)+int.Parse(b);
+   Console.WriteLine(c); //20
+
+  string a="10.5";
+   string b="10";
+   int c=int.Parse(a)+int.Parse(b);
+   Console.WriteLine(c);//error
+
+string a="10.5";
+   string b="10";
+   float c=float.Parse(a)+float.Parse(b);  // agar int c me store kare ge to error dega
+   Console.WriteLine(c); //20.5
+
+UserInput :-
+  Console.WriteLine("Enter first number :");
+  float f1=Console.ReadLine(); //error-Cannot implicitly convert type 'string' to 'float'  or   yaha pe float likho ya int error dega to hame explicit conversion karna pade ga   .       String me nhi dega error 
+
+Only String leta h -> to float.Parse(),Conver.ToFloat32 use kare ge     (int) wala error dega to yeh use nhi kare ge
+
+  Console.WriteLine("Enter first number :");
+  float f1=float.Parse(Console.ReadLine()); //10.234
+
+Constant
+Const int a=10;
+
+Const int a;//declaration
+print(a) // error 
+
+ Declaration k waqt value dena jaruri h warna error de dega kisi bhi case me agar hum simple variable hi banaye
+Int a;
+printa(a);//error
+
+Constants and declared for value type not reference type
+
+Date and Time - Format Specifier
+Date and time format specifier is a special character that enables you to display the data and time values in different formats.
+
+Format specifier                                             Name
+
+d—---------------------------------------------------    Short date
+ D—--------------------------------------Long date
+f—---------------------------------------full date/time(short time)
+F—---------------------------------------’’’’’’’’’’’’’’’’’’’’’’’’’(long time)
+g—--------------------------------------------General data/time(short time)
+G—---------------------------------------’’’’’’’’’’’’’’’’’’’’’’’’’’’’’’’’’’’’’’’’’’’’’’’’(long time)
+M or m —---------------------------------month day
+t—------------------------------------short time
+T—-------------------------------------long time
+Y—-------------------------------------year
+
+
+Eg:- y small y hai
+Y-9
+Yy-19
+yyyy-2019
+
+
+Eg:-
+Main k andar-
+    DateTime dt=DateTime.Now;
+    Console.WriteLine("{0 :d}",dt);
+
+o/p:-    12/04/2025
+
+{0 :d}- format specifier hai to dt k andar date store ho gya h dt ne format specifier ko de diya h print karwane k liye
+DateTime - predefined hai .net k andar
+
+
+  DateTime dt=DateTime.Now;
+    Console.WriteLine("{0 :D}",dt);
+o/p-Thursday, 04 December 2025
+
+
+
+Statement and Expression and Operators
+Statement :-  statement is a single instruction that tells the computer to perform a specific action
+Or
+To perform the tasks , programmers provide instruction . these instructions are called statement.
+Statement can contain expressions.
+Eg- assign the value , loop , addition etc;
+
+ Operator ➖
+       int a=10;
+      int b=30;
+      bool c= a && b;
+      Console.WriteLine(c); //error Operator '&&' cannot be applied to operands of type 'int' and 'int'
+
+Ternary operator :- include a special type decision making operator ? : called ternary operator.
+
+
+Login System :-
+   Console.WriteLine("Enter your email");
+    String email =Console.ReadLine();
+    if(email == "baba@gmail.com"){
+         Console.WriteLine("Enter your password");
+         String password =Console.ReadLine();
+         if(password == "123baba"){
+                Console.WriteLine("Login done");
+         }
+    }
+    else {
+        Console.WriteLine("invalid");
+    }
+    
+    }
+
+
+Switch case ➖
+Kab use karte h jab bhut sara if else statement ho jaye tab hum switch use kare ge
+or
+To avoid using multiple if statement 
+
+Note :- break nhi likho ge error aa jaye ga har case k andar har case me break hona jaruri h    c#- error  and c,c++,java me no error
+
+ int a=10;
+    switch(a){
+        case 10:
+         Console.WriteLine("invalid");
+         break;
+          case 1:
+         Console.WriteLine("invalid");
+         break;
+          case 2:
+         Console.WriteLine("invalid");
+        
+         
+    }   //  error- break nhi h
+
+
+ int a=17;
+    switch(a){
+        case 10:
+         Console.WriteLine("invalid");
+         break;
+          case 1:
+         Console.WriteLine("invalid");
+         break;
+          case 2:
+         Console.WriteLine("invalid");
+        break;
+        default:
+          Console.WriteLine("iid");
+          break;
+        
+         
+    }
+
+// default me bhi break lage ga
+Case k andar condition nhi de sakte h 
+Case age .=5;
+
+  int a=17;
+    switch(a){
+        case 10:
+        case 9:
+        case 7:
+         Console.WriteLine("invalid");
+         break;
+          case 1:
+         Console.WriteLine("invalid");
+         break;
+          case 2:
+         Console.WriteLine("invalid");
+        break;
+        default:
+          Console.WriteLine("iid");
+          break;
+        
+         
+    }   // aise bhi likh sakte h bhut saare same case ek hi o/p de raha h to aise likh denge
+
